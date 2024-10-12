@@ -56,7 +56,5 @@ function kerapy_basic_functions(){
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
-
-    \Carbon_Fields\Carbon_Fields::boot();
 }
 add_action('after_setup_theme', 'kerapy_basic_functions');
