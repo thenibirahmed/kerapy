@@ -1,7 +1,6 @@
 <?php 
 
 function kerapy_basic_functions(){
-    require_once( 'vendor/autoload.php' );
     require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
     add_theme_support('title-tag');
