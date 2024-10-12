@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <hr class="bg-light mt-5">
+                <hr class="bg-light mt-5 mb-4">
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-3">
                     <div class="d-flex align-items-center">
                         <a href="#" class="bottom-link">Privacy Policy</a>
