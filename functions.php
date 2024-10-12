@@ -9,6 +9,16 @@ function kerapy_basic_functions(){
     add_theme_support('widgets');
     add_theme_support('post-formats', array('audio','gallery','video'));
     add_theme_support('woocommerce');
+
+    if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php' ) ) {
+        return new WP_Error( 'class-wp-bootstrap-navwalker-missing', 'It appears the class-wp-bootstrap-navwalker.php file may be missing.' );
+    } else {
+        require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+    }
+
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'THEMENAME' ),
+    ) );
 }
 add_action('after_setup_theme', 'kerapy_basic_functions');
 

@@ -24,60 +24,21 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-md-4">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Home
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.html">Home V1</a></li>
-                                    <li><a class="dropdown-item" href="home_v2.html">Home V2</a></li>
-                                    <li><a class="dropdown-item" href="home_v3.html">Home V3</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="about_v1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                About
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="about_v1.html">About V1</a></li>
-                                    <li><a class="dropdown-item" href="about_v2.html">About V2</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="service.html">Service Page</a></li>
-                                    <li><a class="dropdown-item" href="service_v1.html">Service Single V1</a></li>
-                                    <li><a class="dropdown-item" href="service_v2.html">Service Single V2</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="contact_v1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Contact
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="contact_v1.html">Contact V1</a></li>
-                                    <li><a class="dropdown-item" href="contact_v2.html">Contact V2</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="blog.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Blog
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="blog.html">Blog Page</a></li>
-                                    <li><a class="dropdown-item" href="blog_single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div>
-                            <a href="#" class="btn btn-outline-dark">Contact Us</a>
-                        </div>
-                    </div>
+					<?php 
+					wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+						'container'       => 'div',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id'    => 'bs-example-navbar-collapse-1',
+						'menu_class'      => 'navbar-nav mx-auto mb-2 mb-lg-0 gap-md-4',
+						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'          => new WP_Bootstrap_Navwalker(),
+					) );
+					?>
+                    <div>
+						<a href="#" class="btn btn-outline-dark">Contact Us</a>
+					</div>
                 </div>
             </nav>
         </div>
