@@ -22,13 +22,14 @@
                         </ul>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <h5 class="footer-list-header">Pages</h5>
+                        <?php dynamic_sidebar('kerapy-footer-2') ?>
+                        <!-- <h5 class="footer-list-header">Pages</h5>
                         <ul class="list-unstyled">
                             <li class="mb-3 footer-list-item"><a href="index.html" class="text-white">Home</a></li>
                             <li class="mb-3 footer-list-item"><a href="about_v1.html" class="text-white">About</a></li>
                             <li class="mb-3 footer-list-item"><a href="service.html" class="text-white">Service</a></li>
                             <li class="mb-3 footer-list-item"><a href="contact_v1.html" class="text-white">Contact</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <h5 class="footer-list-header">CMS Pages</h5>
