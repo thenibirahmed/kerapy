@@ -2,17 +2,9 @@
             <div class="container py-md-4">
                 <div class="row">
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <h5 class="footer-list-header">Contact</h5>
+                        <?php dynamic_sidebar('kerapy-footer-1') ?>
+
                         <ul class="list-unstyled">
-                            <li class="mb-3 footer-list-item">
-                                <a href="#" class="text-white"><span><i class="fas fa-map-marker-alt pe-3"></i></span>ABC Street, New York, USA</a>
-                            </li>
-                            <li class="mb-3 footer-list-item">
-                                <a href="#" class="text-white"><span><i class="fas fa-phone pe-3"></i></span>+123 4465 696</a>
-                            </li>
-                            <li class="mb-3 footer-list-item">
-                                <a href="#" class="text-white"><span><i class="fas fa-envelope pe-3"></i></span>infochiropactor@gmail.com</a>
-                            </li>
                             <li class="mb-3 footer-list-item">
                                 <a href="#" class="text-white social-icon"><i class="fab fa-x"></i></a>
                                 <a href="#" class="text-white social-icon"><i class="fab fa-facebook-f"></i></a>

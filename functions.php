@@ -21,8 +21,8 @@ function kerapy_basic_functions(){
         'name'          => __( 'Kerapy footer 1', 'kerapy' ),
         'id'            => 'kerapy-footer-1',
         'description'   => __( 'Widgets in this area will be shown footer 1 comulm.', 'kerapy' ),
-        'before_widget' => '<div class="col-md-6 col-lg-3 mb-4 mb-md-0">',
-        'after_widget'  => '</div>',
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
@@ -31,8 +31,8 @@ function kerapy_basic_functions(){
         'name'          => __( 'Kerapy footer 2', 'kerapy' ),
         'id'            => 'kerapy-footer-2',
         'description'   => __( 'Widgets in this area will be shown footer 2 column.', 'kerapy' ),
-        'before_widget' => '<div class="col-md-6 col-lg-3 mb-4 mb-md-0">',
-        'after_widget'  => '</div>',
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
@@ -41,8 +41,8 @@ function kerapy_basic_functions(){
         'name'          => __( 'Kerapy footer 3', 'kerapy' ),
         'id'            => 'kerapy-footer-3',
         'description'   => __( 'Widgets in this area will be shown footer 3 column.', 'kerapy' ),
-        'before_widget' => '<div class="col-md-6 col-lg-3 mb-4 mb-md-0">',
-        'after_widget'  => '</div>',
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
@@ -51,8 +51,8 @@ function kerapy_basic_functions(){
         'name'          => __( 'Kerapy footer 4', 'kerapy' ),
         'id'            => 'kerapy-footer-4',
         'description'   => __( 'Widgets in this area will be shown footer 4 column.', 'kerapy' ),
-        'before_widget' => '<div class="col-md-6 col-lg-3 mb-4 mb-md-0">',
-        'after_widget'  => '</div>',
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
