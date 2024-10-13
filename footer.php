@@ -23,22 +23,9 @@
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <?php dynamic_sidebar('kerapy-footer-2') ?>
-                        <!-- <h5 class="footer-list-header">Pages</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 footer-list-item"><a href="index.html" class="text-white">Home</a></li>
-                            <li class="mb-3 footer-list-item"><a href="about_v1.html" class="text-white">About</a></li>
-                            <li class="mb-3 footer-list-item"><a href="service.html" class="text-white">Service</a></li>
-                            <li class="mb-3 footer-list-item"><a href="contact_v1.html" class="text-white">Contact</a></li>
-                        </ul> -->
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <h5 class="footer-list-header">CMS Pages</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 footer-list-item"><a href="blog.html" class="text-white">Blog</a></li>
-                            <li class="mb-3 footer-list-item"><a href="#" class="text-white">Privacy Policy</a></li>
-                            <li class="mb-3 footer-list-item"><a href="#" class="text-white">Terms & Conditions</a></li>
-                            <li class="mb-3 footer-list-item"><a href="#" class="text-white">Refund Policy</a></li>
-                        </ul>
+                        <?php dynamic_sidebar('kerapy-footer-3') ?>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="footer-list-header">Newsletter</h5>

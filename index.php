@@ -32,7 +32,7 @@
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
 			<?php while(have_posts()) : the_post() ?>
 				<div class="col">
-					<a href="blog_single.html" class="text-decoration-none">
+					<a href="<?php the_permalink() ?>" class="text-decoration-none">
 						<div class="card h-100 overflow-hidden rounded-0 border-0">
 							<img src="<?php echo get_the_post_thumbnail_url() ?>" alt="Manual Therapy" class="card-img-top rounded-0 img-fluid">
 							<div class="card-body pt-3 p-0">
