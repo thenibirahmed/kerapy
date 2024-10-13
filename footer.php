@@ -3,15 +3,6 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <?php dynamic_sidebar('kerapy-footer-1') ?>
-
-                        <ul class="list-unstyled">
-                            <li class="mb-3 footer-list-item">
-                                <a href="#" class="text-white social-icon"><i class="fab fa-x"></i></a>
-                                <a href="#" class="text-white social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-white social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <?php dynamic_sidebar('kerapy-footer-2') ?>
