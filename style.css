@@ -537,7 +537,7 @@ footer .bottom-link {
 }
 
 .kerapy-blockquote p {
-    border-left: 2px solid #00DCC2 !important;
+    border-left: 2px solid #00DCC2;
     padding-left: 15px;
 }
 
