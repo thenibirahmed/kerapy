@@ -46,7 +46,9 @@
 				</div>
 			<?php endwhile ?>
 
-			<?php the_posts_pagination() ?>
+			<?php comments_popup_link('0 Comments', '1 Comment', '% Comments') ?>
+
+			<?php comments_template() ?>
 		</div>
 	</div>
 </div>  
