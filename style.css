@@ -7,9 +7,12 @@ Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
-License URI: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kerapy
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+Copyright (C) 2024 Your Name or Company
+Kerapy theme is distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. This theme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 */
 body {
     font-family: "Inter", sans-serif;

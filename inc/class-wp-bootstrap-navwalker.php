@@ -120,7 +120,7 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_menu {
 		// if $args has 'echo' key and it's true echo, otherwise return.
 		if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $fallback_output;
+			return $fallback_output;
 		} else {
 			return $fallback_output;
 		}
