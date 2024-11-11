@@ -5,6 +5,7 @@ function kerapy_basic_functions(){
 
     add_theme_support('title-tag');
     add_theme_support('menus');
+    add_theme_support( 'automatic-feed-links' );
     add_theme_support('post-thumbnails');
     add_theme_support('custom-header');
     add_theme_support('custom-background');
@@ -14,9 +15,32 @@ function kerapy_basic_functions(){
 
 
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'THEMENAME' ),
+        'primary' => __( 'Primary Menu', 'kerapy' ),
     ) );
+}
+add_action('after_setup_theme', 'kerapy_basic_functions');
 
+
+function kerapy_load_scripts(){
+    wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2', 'all');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap', array(), null, 'all');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0', 'all');
+
+    wp_enqueue_style('kerapy-style', get_stylesheet_uri(), array(), '1.0', 'all');
+
+    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js', array('jquery'), '5.3.2', true);
+    // wp_enqueue_script('kerapy-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'kerapy_load_scripts');
+
+
+function kerapy_theme_option_scripts(){
+    wp_enqueue_style('kerapy-redux-custom-css', get_template_directory_uri() . '/assets/css/redux.css' , array( 'redux-admin-css' ), '1.0.0', 'all');
+}
+add_action( 'redux/page/kerapy_theme_options/enqueue', 'kerapy_theme_option_scripts' );
+
+
+function kerapy_widgets(){
     register_sidebar( array(
         'name'          => __( 'Kerapy footer 1', 'kerapy' ),
         'id'            => 'kerapy-footer-1',
@@ -57,23 +81,4 @@ function kerapy_basic_functions(){
         'after_title'   => '</h5>',
     ) );
 }
-add_action('after_setup_theme', 'kerapy_basic_functions');
-
-
-function kerapy_load_scripts(){
-    wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2', 'all');
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap', array(), null, 'all');
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0', 'all');
-
-    wp_enqueue_style('kerapy-style', get_stylesheet_uri(), array(), '1.0', 'all');
-
-    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js', array('jquery'), '5.3.2', true);
-    // wp_enqueue_script('kerapy-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
-}
-add_action('wp_enqueue_scripts', 'kerapy_load_scripts');
-
-
-function kerapy_theme_option_scripts(){
-    wp_enqueue_style('kerapy-redux-custom-css', get_template_directory_uri() . '/assets/css/redux.css' , array( 'redux-admin-css' ), '1.0.0', 'all');
-}
-add_action( 'redux/page/kerapy_theme_options/enqueue', 'kerapy_theme_option_scripts' );
+add_action('widgets_init', 'kerapy_widgets');

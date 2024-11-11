@@ -34,7 +34,11 @@
 				<?php get_template_part('template-parts/content', get_post_format()); ?>
 			<?php endwhile ?>
 
-			<?php the_posts_pagination() ?>
+		</div>
+		<div class="row mt-5">
+			<div class="col">
+				<?php the_posts_pagination() ?>
+			</div>
 		</div>
 	</div>
 </div>  
