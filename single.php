@@ -1,55 +1,143 @@
-<?php get_header() ?>
-<div class="blog-head py-5">
+<?php get_header(); ?>
+<?php 
+    while(have_posts()){
+        the_post()
+?>
+<div class="blog-title py-5">
+	<div class="container pt-md-4">
+		<div class="row px-md-5 pb-5">
+			<div class="col">
+				<h1 class="text-center"><?php the_title(); ?></h1>
+				<h6 class="sub-head text-center">
+					<?php 
+						the_author();
+						?>
+						-
+						<?php
+						echo get_the_date( 'M d, Y' );
+						?>
+						|
+						<?php 
+							$count = 0;
+							$cats = get_the_category();
+							if( ! empty($cats) ){
+								foreach( $cats as $cat){
+									$count++;
+									?>
+									<span<?php echo get_category_link($cat->term_id);?>">
+										<?php echo esc_html($cat->name); ?>
+									</span> 
+								<?php   
+									if( $count == 1){
+										break;
+									}
+								}
+							}
+						?>
+						|
+						<?php
+							$comments_number = get_comments_number();
+							if ('1' === $comments_number) {
+								esc_attr_e('1 Comment', 'kerapy');
+							} else {
+								echo esc_html__('Comments', 'kerapy') . ' (0' . number_format_i18n($comments_number) . ')';
+							}
+						?>
+						<?php
+					?>
+				</h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<?php 
+					if( has_post_thumbnail() ){
+						the_post_thumbnail( 'large', [
+							'class' => 'img-fluid blog-single-img'
+						] );
+					}
+				?>
+				<img src="images/Single_blog_banner.jpg" class="img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blog-content">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<?php the_content(); ?>
+			</div>
+		</div>
+		<?php get_template_part( 'template-parts/postnavigation'); ?>
+	</div>
+</div>
+<?php } ?>
+
+
+<div class="author py-5">
+	<div class="container pb-md-4">
+		<div class="row">
+			<div class="col-md-1 col-3 author-img ">
+				<?php
+					echo get_avatar( get_the_author_meta('ID'), '120', '', 'avatar',
+						array('class' => '') );
+				?>
+			</div>
+			<div class="col-md-11 col-12">
+				<h5><?php echo esc_html__('Written by', 'kerapy');?> 
+					<?php the_author(); ?>
+				</h5>
+				<p><?php echo get_the_author_meta('description'); ?></p>
+				<div>
+					<a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="primary-button">
+						<?php echo esc_html__('More Posts by', 'kerapy'); ?> 
+						<?php echo get_the_author_meta('display_name'); ?>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php 
+global $kerapy_option;
+	$relatedpost = $kerapy_option['related_title'];
+?>
+<div class="related-post py-5 bg-light">
 	<div class="container py-md-4">
 		<div class="row">
-			<div class="col d-flex flex-column align-items-center justify-content-center">
-				<div>
-					<div class="d-flex align-items-center gap-2">
-						<div>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.9391 12.0868C15.7482 14.0496 14.0496 15.7482 12.0868 23.9391C12.0804 23.957 12.0685 23.9724 12.053 23.9833C12.0375 23.9942 12.019 24 12 24C11.981 24 11.9625 23.9942 11.947 23.9833C11.9315 23.9724 11.9196 23.957 11.9132 23.9391C9.95041 15.7482 8.25181 14.0496 0.0608537 12.0868C0.0430225 12.0804 0.0276168 12.0685 0.0167294 12.053C0.00584201 12.0375 0 12.019 0 12C0 11.981 0.00584201 11.9625 0.0167294 11.947C0.0276168 11.9315 0.0430225 11.9196 0.0608537 11.9132C8.25181 9.95041 9.95041 8.25181 11.9132 0.0608537C11.9196 0.0430225 11.9315 0.0276168 11.947 0.0167294C11.9625 0.00584201 11.981 0 12 0C12.019 0 12.0375 0.00584201 12.053 0.0167294C12.0685 0.0276168 12.0804 0.0430225 12.0868 0.0608537C14.0496 8.25181 15.7482 9.95041 23.9391 11.9132C23.957 11.9196 23.9724 11.9315 23.9833 11.947C23.9942 11.9625 24 11.981 24 12C24 12.019 23.9942 12.0375 23.9833 12.053C23.9724 12.0685 23.957 12.0804 23.9391 12.0868Z" fill="#0052A8"/>
-							</svg>
+			<div class="col">
+				<div class="d-flex flex-column align-items-center justify-content-center">
+					<div>
+						<div class="pb-4 d-flex justify-content-between align-items-center">
+						<?php 
+								if(!empty($relatedpost)){
+									?>
+									<h1><?php echo esc_html($relatedpost);?></h1>
+									<?php
+								}?>
 						</div>
-						<div class="divider"></div>
-						<div>
-							<h6 class="sub-head">Blog & News</h6>
-						</div>
-						<div class="divider"></div>
-						<div>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.9391 12.0868C15.7482 14.0496 14.0496 15.7482 12.0868 23.9391C12.0804 23.957 12.0685 23.9724 12.053 23.9833C12.0375 23.9942 12.019 24 12 24C11.981 24 11.9625 23.9942 11.947 23.9833C11.9315 23.9724 11.9196 23.957 11.9132 23.9391C9.95041 15.7482 8.25181 14.0496 0.0608537 12.0868C0.0430225 12.0804 0.0276168 12.0685 0.0167294 12.053C0.00584201 12.0375 0 12.019 0 12C0 11.981 0.00584201 11.9625 0.0167294 11.947C0.0276168 11.9315 0.0430225 11.9196 0.0608537 11.9132C8.25181 9.95041 9.95041 8.25181 11.9132 0.0608537C11.9196 0.0430225 11.9315 0.0276168 11.947 0.0167294C11.9625 0.00584201 11.981 0 12 0C12.019 0 12.0375 0.00584201 12.053 0.0167294C12.0685 0.0276168 12.0804 0.0430225 12.0868 0.0608537C14.0496 8.25181 15.7482 9.95041 23.9391 11.9132C23.957 11.9196 23.9724 11.9315 23.9833 11.947C23.9942 11.9625 24 11.981 24 12C24 12.019 23.9942 12.0375 23.9833 12.053C23.9724 12.0685 23.957 12.0804 23.9391 12.0868Z" fill="#0052A8"/>
-							</svg>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="py-4 pb-md-5 d-flex justify-content-between align-items-center">
-						<h2>News & Blog</h2>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row g-5">
-			<?php while(have_posts()) : the_post() ?>
-				<div class="col">
-					<a href="<?php the_permalink() ?>" class="text-decoration-none">
-						<div class="card h-100 overflow-hidden rounded-0 border-0">
-							<img src="<?php echo get_the_post_thumbnail_url() ?>" alt="Manual Therapy" class="card-img-top rounded-0 img-fluid">
-							<div class="card-body pt-3 p-0">
-								<h6 class="card-title"><?php the_title() ?></h6>
-								<h6 class="sub-head text-black-50 d-flex">
-									<?php the_category() ?> <span class="mx-2">|</span> <?php echo get_the_date('M d, Y') ?>
-								</h6>
-							</div>
-						</div>
-					</a>
+		<?php get_template_part( 'template-parts/related-posts'); ?>
+	</div>
+</div>
+
+<div class="comment pb-5">
+	<div class="container py-md-4">
+		<div class="row py-3">
+			<div class="col">
+				<div class="m-auto col-12 mt-5 bg-white ">
+					<?php
+						if ( !post_password_required() ){
+							comments_template();
+						}
+					?>
 				</div>
-			<?php endwhile ?>
-
-			<?php comments_popup_link('0 Comments', '1 Comment', '% Comments') ?>
-
-			<?php comments_template() ?>
+			</div>
 		</div>
 	</div>
-</div>  
-<?php get_footer() ?>
+</div>
+<?php get_footer(); ?>
