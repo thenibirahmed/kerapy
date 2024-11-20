@@ -95,3 +95,130 @@ function kerapy_theme_option_scripts(){
 add_action( 'redux/page/kerapy_theme_options/enqueue', 'kerapy_theme_option_scripts' );
 
 
+function kerapy_inline_css() {
+global $kerapy_option;
+$btn_color = $kerapy_option['h-btn-color'];
+$btn_bg = $kerapy_option['h-btn-bg'];
+$btn_border = $kerapy_option['h-btn-border'];
+$btn_border_radius = $kerapy_option['h-btn-radius'];
+$btn_typography = $kerapy_option['h-btn-typography'];
+// styles options
+$primary_color = $kerapy_option['primary_color'];
+$heading_color = $kerapy_option['heading_color'];
+// maintenance mode
+
+
+// footer setting
+$footer_background_color = $kerapy_option['footer_bg_color'];
+$footer_heading_typography = $kerapy_option['footer-title-typography'];
+$footer_content_typography = $kerapy_option['footer-content-typography'];
+
+
+?>
+<style>
+    .btn-outline-dark {
+        color: <?php echo esc_html($btn_color['regular']); ?> !important;
+        background-color: <?php echo esc_html($btn_bg['regular']); ?> !important;
+        border-top-width: <?php echo esc_html($btn_border['border-top']); ?>!important;
+        border-right-width: <?php echo esc_html($btn_border['border-right']); ?> !important;
+        border-bottom-width: <?php echo esc_html($btn_border['border-bottom']); ?> !important;
+        border-left-width: <?php echo esc_html($btn_border['border-left']); ?> !important;
+        border-style: <?php echo esc_html($btn_border['border-style']); ?> !important;
+        border-color:<?php echo esc_html($btn_border['border-color']); ?> !important;
+        border-radius:<?php echo esc_html($btn_border_radius); ?>px!important;
+    }
+    .btn-outline-dark {
+        font-family: <?php echo esc_html($btn_typography['font-family']); ?> !important;
+        font-weight: <?php echo esc_html($btn_typography['font-weight']); ?> !important;
+        font-style: <?php echo esc_html($btn_typography['font-style']); ?> !important;
+        font-size: <?php echo esc_html($btn_typography['font-size']); ?> !important;
+        line-height: <?php echo esc_html($btn_typography['line-height']); ?> !important;
+        color: <?php echo esc_html($btn_typography['color']); ?> !important;
+        text-align: <?php echo esc_html($btn_typography['text-align']); ?> !important;
+    }
+    .btn-outline-dark:hover {
+        color: <?php echo esc_html($btn_color['hover']); ?> !important;
+        background-color: <?php echo esc_html($btn_bg['hover']); ?> !important;
+    }
+    :root{
+        --primary: <?php echo esc_html($primary_color); ?> !important;
+        --heading: <?php echo esc_html($heading_color); ?> !important;
+    }
+    .footer-bg-color {
+        background-color: <?php echo esc_html($footer_background_color); ?> !important;
+    }
+</style>
+<style>
+    .footer-list-header{
+        font-family: <?php echo esc_html($footer_heading_typography['font-family']); ?> !important;
+        font-weight: <?php echo esc_html($footer_heading_typography['font-weight']); ?> !important;
+        font-style: <?php echo esc_html($footer_heading_typography['font-style']); ?> !important;
+        font-size: <?php echo esc_html($footer_heading_typography['font-size']); ?> !important;
+        line-height: <?php echo esc_html($footer_heading_typography['line-height']); ?> !important;
+        color: <?php echo esc_html($footer_heading_typography['color']); ?> !important;
+        text-align: <?php echo esc_html($footer_heading_typography['text-align']); ?> !important;
+    }
+    .footer-list-item a{
+        font-family: <?php echo esc_html($footer_content_typography['font-family']); ?> !important;
+        font-weight: <?php echo esc_html($footer_content_typography['font-weight']); ?> !important;
+        font-style: <?php echo esc_html($footer_content_typography['font-style']); ?> !important;
+        font-size: <?php echo esc_html($footer_content_typography['font-size']); ?> !important;
+        line-height: <?php echo esc_html($footer_content_typography['line-height']); ?> !important;
+        color: <?php echo esc_html($footer_content_typography['color']); ?> !important;
+        text-align: <?php echo esc_html($footer_content_typography['text-align']); ?> !important;
+    }
+    .footer-list-item{
+        color: <?php echo esc_html($footer_content_typography['color']); ?> !important;
+    }
+</style>
+
+<?php
+}
+add_action('wp_head', 'kerapy_inline_css');
+
+
+
+
+
+// Enable maintenance mode
+function enable_maintenance_mode() {
+    global $kerapy_option;
+    $maintenance_mode = $kerapy_option['maintenance_mode'];
+
+    if( $maintenance_mode == '1' ){
+    wp_die(
+        '<h1>Under Maintenance</h1><p>Our website is currently undergoing scheduled maintenance. Please check back later.</p>',
+        'Maintenance Mode',
+        array( 'response' => 503 )
+    );
+    }
+
+}
+add_action( 'get_header', 'enable_maintenance_mode' );
+
+
+
+
+// custom excerpt
+function kerapy_excerpt($word_count = 10) {
+    global $post;
+    
+    // Get the post content
+    $content = get_the_content(null, false, $post);
+    // var_dump($content);
+    // Strip shortcodes and tags from the content
+    $content = strip_shortcodes($content);
+    $content = wp_strip_all_tags($content);
+    
+    // Break the content into an array of words
+    $words = explode(' ', $content);
+    
+    // Truncate the words to the desired length
+    if (count($words) > (int) $word_count) {
+        $words = array_slice($words, 0, (int) $word_count);
+        $content = implode(' ', $words) . '...'; // Add ellipsis for continuation
+    }
+    
+    return $content;
+}
+

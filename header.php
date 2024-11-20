@@ -2,6 +2,9 @@
 global $kerapy_option;
 $btn_text = $kerapy_option['h-btn-text'];
 $btn_url = $kerapy_option['h-btn-link'];
+$btn_color = $kerapy_option['h-btn-color'];
+$btn_bg_color = $kerapy_option['h-btn-bg'];
+
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +14,20 @@ $btn_url = $kerapy_option['h-btn-link'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <?php wp_head()?>
+    <style>
+        <?php echo wp_kses_post($kerapy_option['css_on_header']); ?>
+    </style>
+    <script>
+        <?php echo wp_kses_post($kerapy_option['js_on_header']); ?>
+    </script>
 </head>
 <body <?php body_class()?>>
+    <style>
+        <?php echo wp_kses_post($kerapy_option['css_on_body_start']); ?>
+    </style>
+    <script>
+        <?php echo wp_kses_post($kerapy_option['js_on_body_start']); ?>
+    </script>
 <?php wp_body_open(); ?>
     <div class="menu">
         <nav class="navbar navbar-expand-lg">
@@ -47,7 +62,9 @@ $btn_url = $kerapy_option['h-btn-link'];
                 if(!empty($btn_text)){
                     ?>
                     <div>
-                        <a href="<?php echo esc_url($btn_url); ?>" class="btn btn-outline-dark"><?php echo esc_html($btn_text);?></a>
+                        <a href="<?php echo esc_url($btn_url); ?>" class="btn btn-outline-dark " >
+                            <?php echo esc_html($btn_text);?>
+                        </a>
                      </div>
                     <?php
                 }?>

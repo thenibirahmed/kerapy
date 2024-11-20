@@ -1,3 +1,12 @@
+<?php 
+global $kerapy_option;
+$featured_img_visibility = $kerapy_option['featured_image_visibility'];
+$category_visibility = $kerapy_option['category_visibility'];
+$date_visibility = $kerapy_option['date_visibility'];
+$excerpt_visibility = $kerapy_option['excerpt_visibility'];
+
+?>
+
 <?php get_header(); ?>
 <?php 
     while(have_posts()){
@@ -13,10 +22,19 @@
 						the_author();
 						?>
 						-
-						<?php
-						echo get_the_date( 'M d, Y' );
+						<?php 
+							if($date_visibility == '1'){
 						?>
+						<?php
+							echo get_the_date( 'M d, Y' );
+						?>
+						<?php } ?>
+						<?php if($date_visibility == '1'){ ?>
 						|
+						<?php } ?>
+						<?php 
+							if($category_visibility == '1' ){
+						?>
 						<?php 
 							$count = 0;
 							$cats = get_the_category();
@@ -34,7 +52,12 @@
 								}
 							}
 						?>
+						<?php } ?>
+						<?php 
+							if($category_visibility == '1' ){
+						?>
 						|
+						<?php } ?>
 						<?php
 							$comments_number = get_comments_number();
 							if ('1' === $comments_number) {
@@ -51,13 +74,16 @@
 		<div class="row">
 			<div class="col">
 				<?php 
+					if($featured_img_visibility == '1'){
+				?>
+				<?php 
 					if( has_post_thumbnail() ){
 						the_post_thumbnail( 'large', [
 							'class' => 'img-fluid blog-single-img'
 						] );
 					}
 				?>
-				<img src="images/Single_blog_banner.jpg" class="img-fluid" alt="">
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -101,7 +127,7 @@
 </div>
 <?php 
 global $kerapy_option;
-	$relatedpost = $kerapy_option['related_title'];
+	$relatedpost = $kerapy_option['relate_post_title'];
 ?>
 <div class="related-post py-5 bg-light">
 	<div class="container py-md-4">

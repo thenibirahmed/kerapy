@@ -21,7 +21,7 @@
     <div class="view-more-button text-center loadmore-btn">
         <div class="primary-button inline-flex items-center gap-2">
             <span></span>
-            <?php echo esc_html__('Load More', ''); ?>
+            <?php echo esc_html__('Load More', 'kerapy'); ?>
         </div>
     </div>
     <?php } ?>

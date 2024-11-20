@@ -17,5 +17,12 @@ jQuery(document).ready(function ($) {
         $('.view-more-button').removeClass('loading');
         $('.view-more-button span').find('svg').remove();
     }); 
+    
+
+
+    $(".accordion-title").on("click", function(){
+        $(this).parent().siblings().removeClass("active").children(".accordion-content").slideUp();
+        $(this).parent().toggleClass("active").children(".accordion-content").slideToggle();
+    });
 
 })

@@ -24,15 +24,17 @@ if( count($ids) > 1 ){
                 ?>
                     <div class="col">
                         <div class="card h-100 border-0 bg-light postcard">
-                            <a href="<?php the_permalink(); ?>" class="">
-                                <div class=""></div>
-                                <?php the_post_thumbnail('medium_large', array(
-                                    'class' => 'card-img-top img-fluid rounded-0'
-                                )); ?>
-                            </a>
-                            <div class="card-body p-0">
+                            <div class="service-img2">
+                                <a href="<?php the_permalink(); ?>" class="">
+                                    <div class=""></div>
+                                    <?php the_post_thumbnail('medium_large', array(
+                                        'class' => 'card-img-top service-img2 img-fluid rounded-0'
+                                    )); ?>
+                                </a>
+                            </div>
+                            <div class=" p-0">
                                 <a href="<?php the_permalink();?>">
-                                    <h6 class="card-title pt-4"><?php the_title(); ?></h6>
+                                    <h6 class="all-heading-color pt-4"><?php the_title(); ?></h6>
                                 </a>
                                 <p>
                                     <?php 
