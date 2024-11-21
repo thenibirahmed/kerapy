@@ -162,16 +162,10 @@ p {
     line-height: 32px;
 
 }
-.navbar-brand {
-    font-family: "Onest", sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 32px;
-
-}
 .navbar-brand img{
-    width: 70px;
-    height: 70px;
+    max-width: 120px;
+    object-fit: cover;
+    height: 60px;
 }
 
 
@@ -1157,8 +1151,6 @@ footer .bottom-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0052A8;
-
 }
 .sectionicon svg path {
     fill: currentColor;
@@ -1172,10 +1164,55 @@ footer .bottom-link {
 .video-img{
     aspect-ratio: 5 / 2.3;
 }
-
+.menu {
+    list-style: none !important;
+    padding-left: 0px !important;
+}
 
 
 /* headign color */
 .all-heading-color{
     color: var(--heading) !important;
+}
+
+
+/* menu style */
+
+.menu-item.show .dropdown-menu{
+    display: block;
+}
+.nav-link {
+    color: rgb(0 0 0 / 65%) !important;
+}
+.nav-link.active{
+    color: rgb(0 0 0 / 100%) !important;
+}
+.nav-link:hover{
+    color: rgb(0 0 0 / 100%) !important;
+}
+.navbar-collapse{
+    justify-content: center !important;
+    position: relative;
+}
+@media screen and (min-width: 991px) {
+    .header-btn {
+        position: absolute;
+        right: 0px;
+        transform: translateY(-51%);
+        top: 50%;
+    }
+    .navbar-expand-lg .navbar-nav {
+        transform: translateX(-43px);
+    }
+}
+.menu-toggle {
+    background-color: transparent !important;
+    border: 1px solid !important;
+    border-radius: 7px !important;
+    padding: 7px 13px !important;
+    border-color: rgb(0 0 0 / 15%) !important;
+}
+.navbar-toggler-icon {
+    width: 30px !important;
+    height: 30px !important;
 }

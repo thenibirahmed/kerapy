@@ -2,7 +2,6 @@
 global $kerapy_option;
 $btn_text = $kerapy_option['h-btn-text'];
 $btn_url = $kerapy_option['h-btn-link'];
-$btn_color = $kerapy_option['h-btn-color'];
 $btn_bg_color = $kerapy_option['h-btn-bg'];
 
 ?>
@@ -43,31 +42,31 @@ $btn_bg_color = $kerapy_option['h-btn-bg'];
                         }
                     ?>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <?php
-                    wp_nav_menu( array(
-                        'theme_location'  => 'primary',
-                        'depth'           => 2,
-                        'container' => 'div',
-                        'container_class' => 'collapse navbar-collapse',
-                        'container_id'    => 'bs-example-navbar-collapse-1',
-                        'menu_class'      => 'navbar-nav mx-auto mb-2 mb-lg-0 gap-md-4',
-                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker'          => new WP_Bootstrap_Navwalker(),
-                    ) );
-                ?>
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location'  => 'primary',
+                            'depth'           => 2,
+                            'container' => 'div',
+                            'menu_class'      => 'navbar-nav mx-auto mb-2 mb-lg-0 gap-md-4',
+                            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        ) );
+                    ?>
                 <?php 
                 if(!empty($btn_text)){
                     ?>
-                    <div>
+                    <div class="header-btn">
                         <a href="<?php echo esc_url($btn_url); ?>" class="btn btn-outline-dark " >
                             <?php echo esc_html($btn_text);?>
                         </a>
                      </div>
                     <?php
                 }?>
+                </div>
                 
             </div>
         </nav>

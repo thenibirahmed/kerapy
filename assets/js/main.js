@@ -26,3 +26,25 @@ jQuery(document).ready(function ($) {
     });
 
 })
+
+
+
+// javascript dropdown menu
+
+const items = document.querySelectorAll('.menu-item');
+
+items.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Close all other dropdowns
+        items.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('show');
+            }
+        });
+
+        // Toggle 'show' on the clicked item
+        item.classList.toggle('show');
+    });
+});

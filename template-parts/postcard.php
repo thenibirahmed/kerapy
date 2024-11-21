@@ -55,7 +55,7 @@ $excerpt_visibility = $kerapy_option['excerpt_visibility'];
                     <?php } ?>
                     
                     <?php 
-                        if($category_visibility == '1' ){
+                        if($category_visibility == '1' && $date_visibility == '1'){
                     ?>
                     <div class="sub-head text-black-50">
                     |

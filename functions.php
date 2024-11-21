@@ -83,6 +83,7 @@ function kerapy_load_scripts(){
 
     wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'), '5.3.2', true);
     wp_enqueue_script('infinite-scroll', get_template_directory_uri().'/assets/js/infinite-scroll.min.js', array('jquery'), '4.0.1', true);
+    wp_enqueue_script('popper-js', get_template_directory_uri().'/assets/js/popper.min.js', array('jquery'), '2.11.8', true);
     wp_enqueue_script('kerapy-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '2.3.4', true);
 }
@@ -97,7 +98,7 @@ add_action( 'redux/page/kerapy_theme_options/enqueue', 'kerapy_theme_option_scri
 
 function kerapy_inline_css() {
 global $kerapy_option;
-$btn_color = $kerapy_option['h-btn-color'];
+$btn_color = $kerapy_option['btn-hover'];
 $btn_bg = $kerapy_option['h-btn-bg'];
 $btn_border = $kerapy_option['h-btn-border'];
 $btn_border_radius = $kerapy_option['h-btn-radius'];
@@ -117,7 +118,6 @@ $footer_content_typography = $kerapy_option['footer-content-typography'];
 ?>
 <style>
     .btn-outline-dark {
-        color: <?php echo esc_html($btn_color['regular']); ?> !important;
         background-color: <?php echo esc_html($btn_bg['regular']); ?> !important;
         border-top-width: <?php echo esc_html($btn_border['border-top']); ?>!important;
         border-right-width: <?php echo esc_html($btn_border['border-right']); ?> !important;
@@ -137,7 +137,7 @@ $footer_content_typography = $kerapy_option['footer-content-typography'];
         text-align: <?php echo esc_html($btn_typography['text-align']); ?> !important;
     }
     .btn-outline-dark:hover {
-        color: <?php echo esc_html($btn_color['hover']); ?> !important;
+        color:<?php echo esc_html($btn_color); ?> !important;
         background-color: <?php echo esc_html($btn_bg['hover']); ?> !important;
     }
     :root{
@@ -169,6 +169,13 @@ $footer_content_typography = $kerapy_option['footer-content-typography'];
     }
     .footer-list-item{
         color: <?php echo esc_html($footer_content_typography['color']); ?> !important;
+        font-family: <?php echo esc_html($footer_content_typography['font-family']); ?> !important;
+        font-weight: <?php echo esc_html($footer_content_typography['font-weight']); ?> !important;
+        font-style: <?php echo esc_html($footer_content_typography['font-style']); ?> !important;
+        font-size: <?php echo esc_html($footer_content_typography['font-size']); ?> !important;
+        line-height: <?php echo esc_html($footer_content_typography['line-height']); ?> !important;
+        color: <?php echo esc_html($footer_content_typography['color']); ?> !important;
+        text-align: <?php echo esc_html($footer_content_typography['text-align']); ?> !important;
     }
 </style>
 
