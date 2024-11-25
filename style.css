@@ -1216,3 +1216,14 @@ footer .bottom-link {
     width: 30px !important;
     height: 30px !important;
 }
+.search-page{
+    display: flex !important;
+    gap: 12px !important;
+    padding-top: 16px !;
+}
+.search-button{
+    border-radius: 8px !important;
+}
+.serch-input{
+    border-radius: 8px !important;
+}

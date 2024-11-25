@@ -1,11 +1,5 @@
 <?php 
     get_header();
-    if ( \Elementor\Plugin::$instance->documents->get( get_the_ID() )->is_built_with_elementor() ) {
-        while ( have_posts() ): 
-            the_post();
-            the_content();
-        endwhile;
-    } else {
         ?>
             <div class="container">
                 <div class="row pt-5">
@@ -55,6 +49,5 @@
             </div>
             
         <?php
-    }
     get_footer();
 ?>
