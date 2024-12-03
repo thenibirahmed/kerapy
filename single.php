@@ -16,7 +16,7 @@ $excerpt_visibility = $kerapy_option['excerpt_visibility'];
 	<div class="container pt-md-4">
 		<div class="row px-md-5 pb-5">
 			<div class="col">
-				<h1 class="text-center"><?php the_title(); ?></h1>
+				<h1 class="text-center all-heading-color "><?php the_title(); ?></h1>
 				<h6 class="sub-head text-center">
 					<?php 
 						the_author();
@@ -139,7 +139,7 @@ global $kerapy_option;
 						<?php 
 								if(!empty($relatedpost)){
 									?>
-									<h1><?php echo esc_html($relatedpost);?></h1>
+									<h1 class="all-heading-color"><?php echo esc_html($relatedpost);?></h1>
 									<?php
 								}?>
 						</div>

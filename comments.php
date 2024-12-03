@@ -9,7 +9,7 @@ if (post_password_required()) {
 	<div id="comment-list">
 		<div itemscope itemtype="<?php echo esc_attr($protocol); ?>schema.org/Comment" id="comments-div" class="post-comments comments-area style-1 clearfix">
 			<?php if (have_comments()) { ?>
-                <h3 class="comments-title pb-4">
+                <h3 class="comments-title pb-4 all-heading-color ">
                     <?php
                     $comments_number = get_comments_number();
                     if ('1' === $comments_number) {

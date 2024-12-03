@@ -25,7 +25,7 @@ $footer_menu = $kerapy_option['footer_menu'];
                 if($footer_menu){
                     wp_nav_menu(array(
                         'menu' => $footer_menu,
-                        'menu_class' => 'd-flex flex-wrap list-unstyled gap-3 mb-0',
+                        'menu_class' => 'd-flex flex-wrap footer-bottom-menu gap-3 mb-0 ',
                         'before' => '<div class="footer-list-item">'
                     ));
                 }

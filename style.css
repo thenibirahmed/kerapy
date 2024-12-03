@@ -461,9 +461,32 @@ img {
 .footer-list-item a:hover {
     color: var(--primary) !important;
 }
+.list-unstyled li {
+    list-style: none;
+}
+
 
 footer a {
     text-decoration: none;
+}
+.wp-social-link a{
+    color: #fff;
+    font-size: 20px;
+    margin-right: 4px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 1px solid #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.wp-social-link{
+    background: transparent !important;
+}
+.wp-social-link a svg path{
+    fill: currentColor !important; /* Matches the color property */
+    stroke: currentColor !important; /* Matches the color property */
 }
 
 .social-icon {
@@ -590,6 +613,7 @@ footer .bottom-link {
 .footer-logo {
     color: var(--primary);
 }
+
 
 .social-icon-footer {
     color: var(--primary);
@@ -1114,11 +1138,7 @@ footer .bottom-link {
 .review-text{
     font-size: 20px;
 }
-@media (max-width: 540px) {
-    .review-text{
-        font-size: 16px;
-    }
-}
+
 .testimonial-section{
     width: 75%;
     margin: auto;
@@ -1141,7 +1161,13 @@ footer .bottom-link {
     display: flex;
     margin-top: 6px;
 }
-
+.list-icon svg, .list-icon svg path, .list-icon i {
+    fill: currentColor; /* Matches the color property */
+    stroke: currentColor; /* Matches the color property */
+}
+.list-description p{
+    color:inherit !important;
+}
 .team-img{
     aspect-ratio: 1/1;
 }
@@ -1151,6 +1177,15 @@ footer .bottom-link {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #0052A8;
+}
+.sectionicon i{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0052A8;
 }
 .sectionicon svg path {
     fill: currentColor;
@@ -1172,6 +1207,9 @@ footer .bottom-link {
 
 /* headign color */
 .all-heading-color{
+    color: var(--heading) !important;
+}
+.comment-reply-title{
     color: var(--heading) !important;
 }
 
@@ -1226,4 +1264,69 @@ footer .bottom-link {
 }
 .serch-input{
     border-radius: 8px !important;
+}
+
+/* client-reviews-section */
+.client-reviews-section {
+    border-left: 2px  dashed #3fbccb;
+    border-bottom: 2px dashed #3fbccb;
+    padding: 40px 0px 40px 4px;
+}
+@media screen and (max-width: 540px) {
+    .client-reviews-section {
+        width: 100%; 
+        padding: 40px 0px 40px 4px; 
+    }
+}
+
+.happy-customers-desc{
+    border-left: 2px solid;
+    padding: 6px 0px 6px 16px;
+    border-color: #5fc4be;
+}
+.happy-customers-content{
+    width: 400px;
+}
+
+/* footer bottom menu */
+
+.footer-bottom-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 0px;
+}
+.footer-bottom-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 0px;
+}
+.footer-bottom-menu ul li{
+    list-style: none;
+}
+.footer-bottom-menu li{
+    list-style: none;
+}
+
+.wp-calendar-table{
+    width: 100% !important;
+}
+.wp-calendar-table tbody tr td a{
+    color: var(--primary) !important;
+}
+.wp-calendar-table caption{
+    color: inherit;
+}
+.wp-calendar-nav-prev a{
+    color: inherit !important;
+}
+.list-unstyled img{
+    margin-top: 26px;
+}
+
+.all-heading-color p {
+    color: inherit !important;
 }
