@@ -265,4 +265,3 @@ function kerapy_excerpt($word_count = 10) {
     
     return $content;
 }
-
