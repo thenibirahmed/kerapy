@@ -27,7 +27,7 @@ $excerpt_visibility = $kerapy_option['excerpt_visibility'];
                 <?php 
                         if($excerpt_visibility == '1'){
                 ?>
-                <p>
+                <p class="py-2">
                     <?php echo kerapy_excerpt($kerapy_option['excerpt_length']); ?>
                 </p>
                 <?php } ?>

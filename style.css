@@ -1,4 +1,4 @@
-/* Theme Name: Kerapy
+/* Theme Name: Kerapy - WordPress Theme
 Theme URI: http://kerapy.com/
 Author: Nibir
 Author URI: https://nibirahmed.com
@@ -166,7 +166,7 @@ p {
 .navbar-brand img{
     max-width: 120px;
     object-fit: cover;
-    height: 60px;
+    height: auto;
 }
 
 
@@ -271,7 +271,7 @@ img {
 .box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     position: relative;
@@ -653,9 +653,7 @@ footer .bottom-link {
     
 }
 
-.testimonial-slider .owl-nav button:hover {
-    border:transparent !important; 
-}
+
 
 .testimonial-slider .owl-nav {
     position: relative;
@@ -666,7 +664,6 @@ footer .bottom-link {
 
 @media (max-width: 768px) {
     .testimonial-slider .owl-nav {
-
         text-align: center;
         margin-top: 0px;
 
@@ -683,13 +680,15 @@ footer .bottom-link {
 .testimonial-box .owl-nav button {
     background-color: #00000000 !important;
     border-radius: 50px !important;
-    border: 1px solid #00000050 !important;
     margin: 5px !important;
 }
+.ts-nav-button .owl-nav button:hover{
+    border-color:transparent !important;
+} 
+
 
 .testimonial-box .owl-nav button:hover {
     background-color: var(--primary) !important;
-    border: 1px solid var(--primary) !important;
 }
 
 .testimonial-box .owl-nav {
@@ -1046,10 +1045,9 @@ footer .bottom-link {
     aspect-ratio: .9/1;
 }
 .tesimonial2-icon svg{
-    width: 100px !important;
-    height: 90px !important;
+    width: 100px ;
+    height: 90px ;
     color: #e0e4e1;
-    margin-left: -13px;
 }
 .blogcard1-img {
     position: relative !important;
@@ -1103,7 +1101,6 @@ footer .bottom-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 /* accordion */
@@ -1118,9 +1115,9 @@ footer .bottom-link {
 }
 
 .accordion-button{
-    font-size: 16px ;
-    font-family: inherit ;
-    font-weight: 500 ;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 500;
 }
 .accordion-button:not(.collapsed) {
     box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
@@ -1183,6 +1180,10 @@ footer .bottom-link {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
+    width: auto;
+}
+.elementor img{
+    width: auto;
 }
 .team-all-card{
     display: flex;
@@ -1233,6 +1234,7 @@ footer .bottom-link {
 /* menu style */
 
 .menu-item.show .dropdown-menu{
+    z-index: 1000;
     display: block;
 }
 .nav-link {
@@ -1295,11 +1297,19 @@ footer .bottom-link {
     }
 }
 
-.happy-customers-desc{
+/* .happy-customers-border{
+    position:absolute;
+    left: 0px;
+    top: 0px;
+} */
+.happy-customers-desc {
+    border-left: 2px solid;
+}
+/* .happy-customers-desc{
     border-left: 2px solid;
     padding: 6px 0px 6px 16px;
     border-color: #5fc4be;
-}
+} */
 .happy-customers-content{
     width: 400px;
 }
@@ -1353,4 +1363,13 @@ footer .bottom-link {
 .team-content{
     padding-bottom: 24px;
 }
-
+.section-alignment{
+    display: flex;
+    align-items: center;   
+}
+.accordion-radius{
+    overflow: hidden;
+}
+.team-w-img img{
+    aspect-ratio: 1/1;
+}

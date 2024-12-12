@@ -111,6 +111,8 @@ $heading_color = $kerapy_option['heading_color'];
 $footer_background_color = $kerapy_option['footer_bg_color'];
 $footer_heading_typography = $kerapy_option['footer-title-typography'];
 $footer_content_typography = $kerapy_option['footer-content-typography'];
+$logo_width = $kerapy_option['h-img-width'];
+$logo_height = $kerapy_option['h-img-height'];
 
 
 ?>
@@ -215,6 +217,12 @@ $footer_content_typography = $kerapy_option['footer-content-typography'];
         text-align: <?php echo esc_html($footer_content_typography['text-align']); ?> !important;
     }
 </style>
+<style>
+    .navbar-brand img{
+        max-width: <?php echo esc_html($logo_width); ?>px!important;
+        max-height: <?php echo esc_html($logo_height); ?>px!important;
+    }
+</style>
 
 <?php
 }
@@ -245,22 +253,16 @@ add_action( 'get_header', 'enable_maintenance_mode' );
 
 // custom excerpt
 function kerapy_excerpt($word_count = 10) {
-    global $post;
+    global $post; 
     
-    // Get the post content
     $content = get_the_content(null, false, $post);
-    // var_dump($content);
-    // Strip shortcodes and tags from the content
     $content = strip_shortcodes($content);
     $content = wp_strip_all_tags($content);
     
-    // Break the content into an array of words
     $words = explode(' ', $content);
-    
-    // Truncate the words to the desired length
     if (count($words) > (int) $word_count) {
         $words = array_slice($words, 0, (int) $word_count);
-        $content = implode(' ', $words) . '...'; // Add ellipsis for continuation
+        $content = implode(' ', $words) . '...';
     }
     
     return $content;

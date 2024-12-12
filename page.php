@@ -7,14 +7,6 @@
         endwhile;
     } else {
         ?>
-            <!-- <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1><?php the_title(); ?></h1>
-                        <?php the_content(); ?>
-                    </div>
-                </div>
-            </div> -->
             <div class="container">
                 <div class="row py-5 ">
                     <div class="col d-flex flex-column align-items-center justify-content-center pb-5">
