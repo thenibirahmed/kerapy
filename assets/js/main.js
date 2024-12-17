@@ -33,9 +33,10 @@ jQuery(document).ready(function ($) {
 
 const items = document.querySelectorAll('.menu-item');
 
+// Handle the click event
 items.forEach(item => {
     item.addEventListener('click', (e) => {
-        e.stopPropagation();
+        e.stopPropagation(); // Prevent the event from propagating
 
         // Close all other dropdowns
         items.forEach(otherItem => {
@@ -47,4 +48,12 @@ items.forEach(item => {
         // Toggle 'show' on the clicked item
         item.classList.toggle('show');
     });
+
+
+
+
 });
+
+
+
+

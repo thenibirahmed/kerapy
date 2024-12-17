@@ -86,6 +86,7 @@ function kerapy_load_scripts(){
     wp_enqueue_script('popper-js', get_template_directory_uri().'/assets/js/popper.min.js', array('jquery'), '2.11.8', true);
     wp_enqueue_script('kerapy-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '2.3.4', true);
+    wp_enqueue_script('fslightbox', get_template_directory_uri() . '/assets/js/fslightbox.js', array('jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'kerapy_load_scripts');
 
@@ -267,3 +268,5 @@ function kerapy_excerpt($word_count = 10) {
     
     return $content;
 }
+
+
