@@ -284,6 +284,9 @@ img {
         min-width: 33.33%;
         
     }
+    .sp-seciton::-webkit-scrollbar {
+        display: none;
+    }
 }
 @media (max-width: 767px) {
     .box {
@@ -357,13 +360,29 @@ img {
     
 }
 .sp-seciton {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    max-width: 100%;
+    display: flex; 
+    flex-wrap: nowrap; 
+    overflow-x: auto;  
+    overflow-y: hidden; 
+    max-width: 100%; 
+    scroll-behavior: smooth;  
+    -webkit-overflow-scrolling: touch; 
 }
-::-webkit-scrollbar {
-    width: 0px;
-  }
+
+/* Custom scrollbar styles */
+.sp-seciton::-webkit-scrollbar {
+    height: 6px;
+}
+
+.sp-seciton::-webkit-scrollbar-thumb {
+    background-color: #00DCC2; 
+    border-radius: 5px;/
+}
+
+.sp-seciton::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
 /* .box:nth-child(3n-2)::before {
     left: 50%;
     width: 100%;
@@ -1029,7 +1048,7 @@ footer .bottom-link {
 /* postcard_design */
 .blog-card2{
     aspect-ratio: 1/.7;
-    width: auto !important;
+    width: 100%;
 }
 
 .loadmore-btn{
@@ -1104,8 +1123,8 @@ footer .bottom-link {
 .blogcard1-img{
     z-index: 1;
     aspect-ratio: 1/.6;
-    max-width: 100%;
-    width: auto;
+    max-width: 100% !important;
+    width: 100%;
 }
 .blogcard1-content{
     position: absolute;
@@ -1222,7 +1241,7 @@ footer .bottom-link {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-    width: auto;
+    width: 100%;
 }
 
 .team-all-card{
@@ -1252,11 +1271,11 @@ footer .bottom-link {
 }
 .service-img{
     aspect-ratio: 1/1;
-    width: auto !important;
+    width: 100%;
 }
 .service-img2{
     aspect-ratio: 1/.6 !important;
-    width: auto !important;
+    width: 100%;
 }
 .no-image{
     aspect-ratio: 1/.6 !important;
@@ -1422,7 +1441,7 @@ footer .bottom-link {
 .team-w-img img{
     aspect-ratio: 1/1;
     margin: auto;
-    width: auto !important;
+    width: 100% ;
 }
 
 .menu-item .dropdown {
