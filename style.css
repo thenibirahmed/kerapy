@@ -268,38 +268,104 @@ img {
 }
 
 
-.box {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    min-width: 25%;
+@media (min-width: 767px) {
+    .sp-seciton {
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto;  
+        overflow-y: hidden; 
+        max-width: 100%; 
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        min-width: 260px;
+        
+    }
+    .box:last-child .circle_divider:after {
+        width: 50%;
+    
+    }
+    .box:first-child .circle_divider:after {
+        width: 50%;
+        right: 0 !important;
+        left: unset !important;
+        
+    }
+    .box:only-child .circle_divider:after {
+        display: none;
+        
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        
+    }
+    .sp-seciton {
+        display: flex; 
+        flex-wrap: wrap;
+        gap: 36px; 
+    }
+     /* 1 and 4 number box */
+    .box:nth-child(3n-2) .circle_divider:after  {
+        left: 50%;
+        width: 50%;
+        background-color: blueviolet !important;
+    }
+    /* 2 and 5 number box */
+    .box:nth-child(3n-1) .circle_divider:after  {
+        left: 0;
+        right: 0;
+        width: 50%;
+        background-color: blueviolet !important;
+    }
+    
+    .box:nth-child(3n) .circle_divider:after  {
+        left: 50%;
+        right: unset;
+        background-color: rgb(36, 4, 67) !important;
+    }
+    
+    .box:last-child:not(:nth-child(3n)) .circle_divider:after  {
+        width: 50%;
+    
+    }
+    
+    .box:last-child:not(:nth-child(3n - 3)) .circle_divider:after  {
+        display: none;
+    
+    }
+    .circle_divider::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background-color:#0052A8;
+        z-index: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        display: none;
+    }
     
 }
 
-@media (max-width: 1100px) {
-    .box {
-        min-width: 33.33%;
-        
-    }
-    .sp-seciton::-webkit-scrollbar {
-        display: none;
-    }
-}
-@media (max-width: 767px) {
-    .box {
-        min-width: 50%;
-        
-    }
-}
-@media (max-width: 500px) {
-    .box {
-        min-width: 100%;
-        
-    }
-}
 
 .increment{
     counter-reset: ordered-counter;
@@ -345,85 +411,8 @@ img {
     width: 100%;
     transform: translateY(-50%);
 }
-.box:last-child .circle_divider:after {
-    width: 50%;
 
-}
-.box:first-child .circle_divider:after {
-    width: 50%;
-    right: 0 !important;
-    left: unset !important;
-    
-}
-.box:only-child .circle_divider:after {
-    display: none;
-    
-}
-.sp-seciton {
-    display: flex; 
-    flex-wrap: nowrap; 
-    overflow-x: auto;  
-    overflow-y: hidden; 
-    max-width: 100%; 
-    scroll-behavior: smooth;  
-    -webkit-overflow-scrolling: touch; 
-}
 
-/* Custom scrollbar styles */
-.sp-seciton::-webkit-scrollbar {
-    height: 6px;
-}
-
-.sp-seciton::-webkit-scrollbar-thumb {
-    background-color: #00DCC2; 
-    border-radius: 5px;/
-}
-
-.sp-seciton::-webkit-scrollbar-track {
-    background: transparent;
-}
-  
-/* .box:nth-child(3n-2)::before {
-    left: 50%;
-    width: 100%;
-}
-
-.box:nth-child(3n-1)::before {
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-
-.box:nth-child(3n)::before {
-    right: 50%;
-}
-
-.box:last-child:not(:nth-child(3n))::before {
-    width: 50%;
-
-}
-
-.box:last-child:not(:nth-child(3n - 3))::before {
-    display: none;
-
-} */
-@media (max-width: 768px) {
-    .container py-md-4 {
-        display: block;
-    }
-
-    .box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-
-    .box::before {
-        display: none;
-    }
-}
 
 .video-wrapper {
     position: relative;
@@ -1397,6 +1386,7 @@ footer .bottom-link {
     align-items: center;
     gap: 22px;
     padding: 0px;
+    flex-wrap: wrap;
 }
 .footer-bottom-menu ul li{
     list-style: none;
