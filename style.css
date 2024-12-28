@@ -1072,10 +1072,9 @@ footer .bottom-link {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: -24px;
+    bottom: -38px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
 }
 .service-carousel .owl-dot {
     background: #85c443 !important;
