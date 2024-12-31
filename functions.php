@@ -249,9 +249,6 @@ function enable_maintenance_mode() {
 }
 add_action( 'get_header', 'enable_maintenance_mode' );
 
-
-
-
 // custom excerpt
 function kerapy_excerpt($word_count = 10) {
     global $post; 
@@ -269,4 +266,5 @@ function kerapy_excerpt($word_count = 10) {
     return $content;
 }
 
+require_once( __DIR__ . '/inc/tgm/kerapy-tgm.php' );
 
