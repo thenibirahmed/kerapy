@@ -91,9 +91,9 @@ function kerapy_sidebar(){
 }
 add_action( 'widgets_init', 'kerapy_sidebar' );
 
-
-
 function kerapy_load_scripts(){
+    wp_enqueue_style( 'jquery-ui-css', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' );
+
     wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap', array(), null, 'all');
     wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), '5.3.2', 'all');
     wp_enqueue_style('fontawesome', get_template_directory_uri().'/assets/css/all.min.css', array(), '6.4.0', 'all');
