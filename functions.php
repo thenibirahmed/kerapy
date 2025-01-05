@@ -68,6 +68,26 @@ function kerapy_sidebar(){
         'before_title'  => '<h5 class="footer-list-header">',
         'after_title'   => '</h5>',
     ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Default Sidebar', 'kerapy' ),
+        'id'            => 'default-sidebar',
+        'description'   => __( 'Will show default sidebar', 'kerapy' ),
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '<h5 class="footer-list-header">',
+        'after_title'   => '</h5>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Woocommerce Sidebar', 'kerapy' ),
+        'id'            => 'woocommerce-sidebar',
+        'description'   => __( 'Will show default sidebar', 'kerapy' ),
+        'before_widget' => '<ul class="list-unstyled">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '<h5 class="footer-list-header">',
+        'after_title'   => '</h5>',
+    ) );
 }
 add_action( 'widgets_init', 'kerapy_sidebar' );
 
