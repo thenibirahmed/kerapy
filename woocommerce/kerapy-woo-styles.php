@@ -2,7 +2,22 @@
 
 function kerapy_woo_inline_css() {
     global $kerapy_option;
-    // $btn_color = $kerapy_option['btn-hover'];
+
+    $header_size = $kerapy_option['kerapy_woo_header_size'];
+    $btn_color = $kerapy_option['kerapy_woo_button_color'];
+    $sale_badge_color = $kerapy_option['kerapy_woo_sale_badge_color'];
+    $price_color = $kerapy_option['kerapy_woo_price_color'];
+    $title_color = $kerapy_option['kerapy_woo_title_color'];
+    $woo_notice_color = $kerapy_option['kerapy_woo_notice_color'];
+    
+    $single_button_color = $kerapy_option['kerapy_woo_single_button_color'];
+    $single_title_color = $kerapy_option['kerapy_woo_single_title_color'];
+    $single_sub_title_color = $kerapy_option['kerapy_woo_single_sub_title_color'];
+    
+    $cart_title_color = $kerapy_option['kerapy_woo_cart_title_color'];
+    $checkout_button_color = $kerapy_option['kerapy_woo_cart_checkout_button_color'];
+    $placeorder_button_color = $kerapy_option['kerapy_woo_cart_placeorder_button_color'];
+
     ?>
     <style>
         .woocommerce .woocommerce-ordering select {
