@@ -38,7 +38,7 @@ function kerapy_woo_inline_css() {
 
         .woocommerce ul.products li.product .onsale {
             background-color: #00DCC2;
-            color: #2A2A2A;
+            color: #ffff;
         }
 
         .woocommerce nav.woocommerce-pagination ul {
@@ -48,9 +48,13 @@ function kerapy_woo_inline_css() {
             clear: both;
             border: none;
             border-right: none;
-            margin: 0px;
+            margin: 0px 0px 40px 0px;
             justify-content: center;
             align-content: center;
+        }
+
+        .page-numbers {
+            gap: 10px;
         }
 
         .woocommerce nav.woocommerce-pagination ul li {
@@ -132,6 +136,60 @@ function kerapy_woo_inline_css() {
         }
         .woocommerce-shop #sidebar a{
             color:#666666;
+        }
+        .woocommerce span.onsale{ 
+            background-color: #00DCC2; 
+            color: #ffff; 
+        }
+        .woocommerce-shop .footer-list-header{
+            color:#2A2A2A !important;
+            padding-bottom: 0.5em;
+            font-size: 20px !important;
+        }
+        .woocommerce-shop .price_slider_wrapper .price_slider_amount  button.button{
+            background-color: #00DCC2;
+            color: #2A2A2A;
+            border-radius: 100px;
+            margin-top:0.8em;
+        }
+        .woocommerce div.product form.cart .reset_variations{
+            background-color: #00DCC2;
+            color: #2A2A2A;
+            border-radius: 100px;
+            border:0px;
+        }
+        .woocommerce div.product form.cart .variations select{
+            padding:0.4em;
+        }
+        .woocommerce div.product form.cart .group_table td{
+            align-content: center;
+        }
+        .woocommerce div.product form.cart .group_table td.woocommerce-grouped-product-list-item__label a{
+            color: #2A2A2A;
+        }
+        .woocommerce-product-search button[type="submit"]{
+            padding: 0.3em 1em;
+            margin-top:0.8em;
+        }
+        .woocommerce-shop a{
+            color: #666666;
+        }
+        #woocommerce-product-search-field-0 {
+            padding:0.5em;
+            width: 100%;
+        }
+        .ui-state-default, .ui-widget-content .ui-state-default{
+            border: 0px;
+            border-radius: 100px;
+            background-color: #00DCC2;
+        }
+        .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price {
+            color: #00DCC2;
+            font-size: 2.25em;
+            font-weight: 700;
+        }
+        .single-product h2{
+            font-size:2.5em;
         }
     </style>
     <?php
