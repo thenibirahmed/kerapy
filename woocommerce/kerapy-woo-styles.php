@@ -5,6 +5,7 @@ function kerapy_woo_inline_css() {
 
     $header_size = $kerapy_option['kerapy_woo_header_size'];
     $btn_color = $kerapy_option['kerapy_woo_button_color'];
+    $btn_text_color = $kerapy_option['kerapy_woo_button_text_color'];
     $sale_badge_color = $kerapy_option['kerapy_woo_sale_badge_color'];
     $price_color = $kerapy_option['kerapy_woo_price_color'];
     $title_color = $kerapy_option['kerapy_woo_title_color'];
@@ -45,8 +46,8 @@ function kerapy_woo_inline_css() {
         .woocommerce ul.products li.product .button {
             display: inline-block;
             margin-top: 1em;
-            background-color: #00DCC2;
-            color: #2A2A2A;
+            background-color: <?php esc_attr_e($btn_color) ?>;
+            color: <?php esc_attr_e($btn_text_color) ?>;
             padding: 16px 32px;
             border-radius: 100px;
         }
