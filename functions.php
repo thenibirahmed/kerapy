@@ -153,3 +153,20 @@ require_once __DIR__ . '/inc/header-inline-css.php';
 require_once( __DIR__ . '/inc/tgm/kerapy-tgm.php' );
 require_once( __DIR__ . '/woocommerce/kerapy-woo-templates.php' );
 require_once( __DIR__ . '/woocommerce/kerapy-woo-styles.php' );
+
+
+function kerapy_import_files() {
+    return array(
+        array(
+            'import_file_name'             => esc_html__( 'Kerapy Demo Import', 'kerapy-core' ),
+            'local_import_file'            => get_template_directory() . '/demo/kerapy-content.xml',
+            'local_import_widget_file'     => get_template_directory() . '/demo/kerapy-widgets.wie',
+            'local_import_customizer_file' => get_template_directory() . '/demo/kerapy-customizer.dat',
+            // 'local_import_redux'           => [
+            //     'file_path'   => KERAPY_CORE_URL . '/demo/kerapy-options.json',
+            //     'option_name' => 'kerapy_option',
+            // ],
+        ),
+    );
+}
+add_filter('ocdi/import_files', 'kerapy_import_files');
