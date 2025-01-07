@@ -7,17 +7,18 @@ function kerapy_woo_inline_css() {
     $btn_color = $kerapy_option['kerapy_woo_button_color'];
     $btn_text_color = $kerapy_option['kerapy_woo_button_text_color'];
     $sale_badge_color = $kerapy_option['kerapy_woo_sale_badge_color'];
+    $sale_badge_text_color = $kerapy_option['kerapy_woo_sale_badge_text_color'];
     $price_color = $kerapy_option['kerapy_woo_price_color'];
     $title_color = $kerapy_option['kerapy_woo_title_color'];
     $woo_notice_color = $kerapy_option['kerapy_woo_notice_color'];
     
     $single_button_color = $kerapy_option['kerapy_woo_single_button_color'];
+    $single_button_text_color = $kerapy_option['kerapy_woo_single_button_text_color'];
     $single_title_color = $kerapy_option['kerapy_woo_single_title_color'];
     $single_sub_title_color = $kerapy_option['kerapy_woo_single_sub_title_color'];
     
-    $cart_title_color = $kerapy_option['kerapy_woo_cart_title_color'];
     $checkout_button_color = $kerapy_option['kerapy_woo_cart_checkout_button_color'];
-    $placeorder_button_color = $kerapy_option['kerapy_woo_cart_placeorder_button_color'];
+    $checkout_button_text_color = $kerapy_option['kerapy_woo_cart_checkout_button_text_color'];
 
     ?>
     <style>
@@ -28,7 +29,7 @@ function kerapy_woo_inline_css() {
 
         .woocommerce ul.products li.product .woocommerce-loop-product__title{
             font-size: 20px;
-            color: black;
+            color: <?php esc_attr_e($title_color) ?>;
         }
 
         .woocommerce ul.products li.product .price {
@@ -36,13 +37,8 @@ function kerapy_woo_inline_css() {
             font-weight: 400;
             margin-bottom: .5em;
             font-size: 16px;
+            color: <?php esc_attr_e($price_color) ?>;
         }
-
-        .woocommerce ul.products li.product .price {
-            font-size: 16px;
-            color: #666666;
-        }
-
         .woocommerce ul.products li.product .button {
             display: inline-block;
             margin-top: 1em;
@@ -53,8 +49,8 @@ function kerapy_woo_inline_css() {
         }
 
         .woocommerce ul.products li.product .onsale {
-            background-color: #00DCC2;
-            color: #ffff;
+            background-color: <?php esc_attr_e($sale_badge_color)?>;
+            color: <?php esc_attr_e($sale_badge_text_color)?>;
         }
 
         .woocommerce nav.woocommerce-pagination ul {
@@ -88,6 +84,7 @@ function kerapy_woo_inline_css() {
             padding-bottom: 0.5em;
             font-size: 48px;
             line-height: 120%;
+            color: <?php esc_attr_e($single_title_color) ?>;
         }
 
         .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price{
@@ -106,12 +103,11 @@ function kerapy_woo_inline_css() {
         }
 
         .woocommerce div.product form.cart .button {
-            background-color: #00DCC2;
-            color: #2A2A2A;
+            background-color:<?php esc_attr_e($single_button_color) ?>;
+            color: <?php esc_attr_e($single_button_text_color) ?>;
             border-radius: 100px;
             padding: 16px 32px;
         }
-
         .wc-block-cart__submit-button {
             border: 1px black !important;
             background-color: #00DCC2;
@@ -135,8 +131,8 @@ function kerapy_woo_inline_css() {
         }
 
         .wc-block-components-button:not(.is-link) {
-            background-color: #00DCC2;
-            color: #2A2A2A;
+            background-color: <?php esc_attr_e($checkout_button_color) ?>;
+            color: <?php esc_attr_e($checkout_button_text_color) ?>;
             border-radius: 100px;
             border: 0;
         }
