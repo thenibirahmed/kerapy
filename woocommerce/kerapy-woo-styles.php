@@ -143,7 +143,7 @@ function kerapy_woo_inline_css() {
         }
 
         .woocommerce-shop #sidebar h2{
-            font-size: 24px;
+            font-size: <?php esc_attr_e($header_size) ?>;
             line-height: 120%;
         }
         .woocommerce-shop #sidebar a{
@@ -200,7 +200,7 @@ function kerapy_woo_inline_css() {
             font-size: 2.25em;
             font-weight: 700;
         }
-        .single-product h2{
+        .single-product h2 {
             font-size:2.5em;
         }
     </style>
