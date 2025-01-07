@@ -23,10 +23,17 @@ function kerapy_basic_functions(){
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'kerapy' ),
     ) );
-
 }
 add_action('after_setup_theme', 'kerapy_basic_functions');
 
+// function kerapy_load_textdomain(){
+//     $kerapy_kit_zip = get_template_directory() . '/demo/elementor/kerapy-kit.zip';
+//     $import_export_module = \Elementor\Plugin::$instance->app->get_component( 'import-export' );
+//     $import_settings['referrer'] = 'remote';
+//     // ray($import_export_module);
+//     $import_export_module->import( $kerapy_kit_zip, $import_settings );
+// }
+// add_action('init', 'kerapy_load_textdomain');
 
 function kerapy_sidebar(){
     register_sidebar( array(
@@ -170,3 +177,14 @@ function kerapy_import_files() {
     );
 }
 add_filter('ocdi/import_files', 'kerapy_import_files');
+
+function kerapy_after_ocdi_import_setup( $selected_import ) {
+    $kerapy_kit_zip = get_template_directory() . '/demo/elementor/elementor-kit.zip';
+
+    $import_export_module = \Elementor\Plugin::$instance->app->get_component( 'import-export' );
+    $import_settings['referrer'] = 'remote';
+
+    $import_export_module->import_kit( $kerapy_kit_zip, $import_settings );
+}
+
+add_action( 'ocdi/after_import', 'kerapy_after_ocdi_import_setup' );
