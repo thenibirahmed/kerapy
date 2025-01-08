@@ -185,6 +185,15 @@ function kerapy_after_ocdi_import_setup( $selected_import ) {
     $import_settings['referrer'] = 'remote';
 
     $import_export_module->import_kit( $kerapy_kit_zip, $import_settings );
+
+    $page = get_page_by_path('home-v1', OBJECT, 'page');
+    update_option( 'page_on_front', $page->ID );
+    update_option( 'show_on_front', 'page' );
+
+    $locations = get_theme_mod('nav_menu_locations');
+    $menu = get_term_by('name', 'Main Menu', 'nav_menu');
+    $locations['primary'] = $menu->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
 }
 
 add_action( 'ocdi/after_import', 'kerapy_after_ocdi_import_setup' );
