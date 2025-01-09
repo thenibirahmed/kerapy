@@ -11,6 +11,12 @@
                     <span class="mx-2">|</span>
                     <?php echo get_the_date( 'M d, Y' ); ?>
                 </h6>
+                <?php wp_link_pages([
+                        'before' => '<div class="page-links">' . __('Pages:', 'kerapy'),
+                        'after' => '</div>',
+                        'link_before' => '<span>',
+                        'link_after' => '</span>',
+                    ]); ?>
             </div>
         </div>
     </a>

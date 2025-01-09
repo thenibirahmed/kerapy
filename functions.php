@@ -22,6 +22,7 @@ function kerapy_basic_functions(){
 
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'kerapy' ),
+        'footer' => __( 'Footer Menu', 'kerapy' ),
     ) );
 }
 add_action('after_setup_theme', 'kerapy_basic_functions');
@@ -165,7 +166,7 @@ require_once( __DIR__ . '/woocommerce/kerapy-woo-styles.php' );
 function kerapy_import_files() {
     return array(
         array(
-            'import_file_name'             => esc_html__( 'Kerapy Demo Import', 'kerapy-core' ),
+            'import_file_name'             => esc_html__( 'Kerapy Demo Import', 'kerapy' ),
             'local_import_file'            => get_template_directory() . '/demo/kerapy-content.xml',
             'local_import_widget_file'     => get_template_directory() . '/demo/kerapy-widgets.wie',
             'local_import_customizer_file' => get_template_directory() . '/demo/kerapy-customizer.dat',

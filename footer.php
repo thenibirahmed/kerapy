@@ -26,6 +26,7 @@
                 <?php 
                     if($footer_menu){
                         wp_nav_menu(array(
+                            'theme_location' => 'footer',
                             'menu' => $footer_menu,
                             'menu_class' => 'd-flex flex-wrap footer-bottom-menu gap-3 mb-0 ',
                             'before' => '<div class="footer-list-item">'

@@ -61,19 +61,19 @@ function kerapy_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'               => 'Elementor', // The plugin name.
+			'name'               => __('Elementor', 'kerapy'), // The plugin name.
 			'slug'               => 'elementor', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
     		// 	'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
 		),
 		array(
-			'name'               => 'One Click Demo Import', // The plugin name.
+			'name'               => __('One Click Demo Import', 'kerapy'), // The plugin name.
 			'slug'               => 'one-click-demo-import', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
     		// 	'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
 		),
 		array(
-			'name'               => 'Kerapy Core', // The plugin name.
+			'name'               => __('Kerapy Core', 'kerapy'), // The plugin name.
 			'slug'               => 'kerapy-core', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
     		'source'       		=> 'https://files.eicdemo.xyz/Kerapy/kerapy-core.zip', // The plugin source.
